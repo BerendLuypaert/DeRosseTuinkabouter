@@ -48,9 +48,9 @@ img {
 
 .site-header {
   align-items: center;
-  background: rgba(36, 69, 50, 0.74);
+  background: rgba(223, 232, 212, 0.78);
   backdrop-filter: blur(18px) saturate(1.15);
-  border-bottom: 1px solid rgba(223, 232, 212, 0.22);
+  border-bottom: 1px solid rgba(36, 69, 50, 0.18);
   box-shadow: 0 18px 42px rgba(21, 41, 31, 0.16);
   display: flex;
   gap: 24px;
@@ -75,6 +75,7 @@ img {
   border-radius: 0;
   box-shadow: none;
   height: 62px;
+  filter: contrast(1.32) saturate(1.22);
   mix-blend-mode: multiply;
   object-fit: contain;
   padding: 0;
@@ -82,7 +83,7 @@ img {
 }
 
 .brand-service {
-  color: rgba(247, 245, 239, 0.82);
+  color: rgba(21, 41, 31, 0.72);
   font-size: 0.76rem;
   font-weight: 800;
   line-height: 1.1;
@@ -97,14 +98,14 @@ nav {
 }
 
 nav a {
-  color: rgba(247, 245, 239, 0.76);
+  color: rgba(21, 41, 31, 0.72);
   font-weight: 700;
   position: relative;
   transition: color 180ms ease, transform 180ms ease;
 }
 
 nav a::after {
-  background: var(--sage);
+  background: var(--leaf);
   border-radius: 999px;
   bottom: -8px;
   content: "";
@@ -118,7 +119,7 @@ nav a::after {
 }
 
 nav a:hover {
-  color: var(--paper);
+  color: var(--leaf-dark);
   transform: translateY(-1px);
 }
 
