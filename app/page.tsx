@@ -74,7 +74,7 @@ export default function Home() {
           <a href="#contact">Contact</a>
         </nav>
         <a className="nav-call" href="tel:+32470246463">
-          0470 24 64 63
+          Bellen
         </a>
       </header>
 
