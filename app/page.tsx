@@ -24,6 +24,11 @@ const gallery = [
     label: "Haagonderhoud",
   },
   {
+    src: "/photos/werk-03.jpeg",
+    alt: "Haag en oprit na snoeiwerk",
+    label: "Snoeiwerk",
+  },
+  {
     src: "/photos/werk-04.jpeg",
     alt: "Aangelegde tuin met siergrind, schors en beplanting",
     label: "Borders opfrissen",
@@ -37,11 +42,6 @@ const gallery = [
     src: "/photos/werk-10.jpeg",
     alt: "Verzorgde zijtuin met schors en beplanting",
     label: "Klein tuinwerk",
-  },
-  {
-    src: "/photos/werk-03.jpeg",
-    alt: "Haag en oprit na snoeiwerk",
-    label: "Snoeiwerk",
   },
   {
     src: "/photos/werk-11.jpeg",
