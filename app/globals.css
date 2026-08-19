@@ -672,7 +672,7 @@ figcaption {
   background-size: cover;
   display: grid;
   gap: 24px;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
+  grid-template-columns: minmax(280px, 0.68fr) minmax(360px, 1fr);
 }
 
 .image-panel,
@@ -684,7 +684,7 @@ figcaption {
 .image-panel {
   animation: panelLiftIn 760ms ease both;
   box-shadow: 0 22px 54px rgba(8, 24, 15, 0.18);
-  min-height: 520px;
+  min-height: 430px;
   position: relative;
 }
 

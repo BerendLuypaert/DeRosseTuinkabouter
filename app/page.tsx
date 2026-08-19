@@ -223,6 +223,7 @@ export default function Home() {
       <footer>
         <span>De Rosse Tuinkabouter</span>
         <span>Tuinonderhoud en kleine tuinwerken in regio Geetbets</span>
+        <span>Website door BMA Studio</span>
       </footer>
     </main>
   );
