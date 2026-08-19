@@ -19,24 +19,34 @@ const services = [
 
 const gallery = [
   {
-    src: "/photos/lange-haag.jpeg",
-    alt: "Lange haag na snoeiwerk in een ruime tuin",
+    src: "/photos/werk-02.jpeg",
+    alt: "Verzorgde border met schors en geschoren haag",
     label: "Haagonderhoud",
   },
   {
-    src: "/photos/schors-border.jpeg",
-    alt: "Verzorgde border met schors en geschoren haag",
+    src: "/photos/werk-04.jpeg",
+    alt: "Aangelegde tuin met siergrind, schors en beplanting",
     label: "Borders opfrissen",
   },
   {
-    src: "/photos/aanplant-schors.jpeg",
+    src: "/photos/werk-06.jpeg",
     alt: "Nieuwe aanplanting met schors rond jonge planten",
     label: "Aanplanting",
   },
   {
-    src: "/photos/onderhoud-detail.jpeg",
-    alt: "Detail van tuinonderhoud en groenwerk",
-    label: "Net resultaat",
+    src: "/photos/werk-10.jpeg",
+    alt: "Verzorgde zijtuin met schors en beplanting",
+    label: "Klein tuinwerk",
+  },
+  {
+    src: "/photos/werk-03.jpeg",
+    alt: "Haag en oprit na snoeiwerk",
+    label: "Snoeiwerk",
+  },
+  {
+    src: "/photos/werk-11.jpeg",
+    alt: "Onderhoudswerk met schors en jonge beplanting",
+    label: "Afwerking",
   },
 ];
 
@@ -100,7 +110,7 @@ export default function Home() {
           </dl>
         </div>
         <div className="hero-media" aria-label="Tuinonderhoud realisatie">
-          <img src="/photos/hero-haag.jpeg" alt="Hoge haag en tuin tijdens onderhoudswerk" />
+          <img src="/photos/header-tuin.jpg" alt="Aangelegde tuin met wandelpad, beplanting en blauwe lucht" />
           <div className="media-note">
             <span>Voor-en-naresultaten</span>
             <strong>te volgen via Facebook en Instagram</strong>
@@ -157,7 +167,7 @@ export default function Home() {
 
       <section className="split-section">
         <div className="image-panel">
-          <img src="/photos/tuinresultaat.jpeg" alt="Verzorgd tuinresultaat na onderhoud" />
+          <img src="/photos/werk-01.jpeg" alt="Hoge haag en tuin tijdens onderhoudswerk" />
         </div>
         <div className="steps-panel">
           <p className="section-kicker">Werkwijze</p>
