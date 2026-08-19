@@ -171,19 +171,50 @@
       }
 
       .hero {
-        display: grid;
-        grid-template-columns: minmax(0, 0.86fr) minmax(420px, 1fr);
+        isolation: isolate;
         min-height: calc(100vh - 78px);
+        overflow: hidden;
+        position: relative;
       }
 
       .hero-copy {
         align-content: center;
         background:
-          radial-gradient(circle at 12% 18%, rgba(111, 138, 69, 0.2), transparent 30%),
-          var(--leaf-dark);
+          linear-gradient(rgba(21, 83, 31, 0.9), rgba(21, 83, 31, 0.9)),
+          url("public/leaf-pattern.png");
+        background-position: center;
+        background-size: cover;
+        box-shadow: -30px 0 90px rgba(21, 41, 31, 0.28);
         color: var(--paper);
         display: grid;
-        padding: clamp(48px, 7vw, 96px);
+        margin-left: auto;
+        min-height: calc(100vh - 78px);
+        padding: clamp(54px, 7vw, 104px) clamp(28px, 6vw, 86px);
+        position: relative;
+        width: min(58vw, 820px);
+        z-index: 2;
+      }
+
+      .hero-copy::before {
+        background: linear-gradient(90deg, transparent, rgba(21, 83, 31, 0.96) 72%);
+        content: "";
+        inset: 0 auto 0 -170px;
+        pointer-events: none;
+        position: absolute;
+        width: 180px;
+        z-index: -1;
+      }
+
+      .hero-copy::after {
+        border: 1px solid rgba(223, 232, 212, 0.12);
+        border-radius: 999px;
+        content: "";
+        height: 210px;
+        position: absolute;
+        right: clamp(18px, 4vw, 52px);
+        top: clamp(28px, 7vw, 92px);
+        transform: rotate(-18deg);
+        width: 210px;
       }
 
       .eyebrow,
@@ -205,8 +236,11 @@
       }
 
       .hero h1 {
-        font-size: clamp(3.1rem, 7vw, 6.8rem);
-        max-width: 820px;
+        font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+        font-size: clamp(3rem, 6.1vw, 6.2rem);
+        font-weight: 900;
+        line-height: 0.94;
+        max-width: 720px;
       }
 
       .hero-text {
@@ -291,24 +325,32 @@
       }
 
       .hero-media {
-        min-height: 560px;
-        position: relative;
+        inset: 0;
+        min-height: 100%;
+        position: absolute;
+        z-index: 1;
       }
 
       .hero-media::after {
-        background: linear-gradient(180deg, transparent 35%, rgba(21, 41, 31, 0.68));
+        background:
+          linear-gradient(90deg, rgba(21, 41, 31, 0.08), rgba(21, 83, 31, 0.3) 48%, rgba(21, 83, 31, 0.8)),
+          linear-gradient(180deg, rgba(21, 41, 31, 0.04), rgba(21, 41, 31, 0.45));
         content: "";
         inset: 0;
         position: absolute;
       }
 
+      .hero-media img {
+        object-position: 32% center;
+      }
+
       .media-note {
         background: rgba(247, 245, 239, 0.92);
         border-radius: 8px;
-        bottom: 34px;
+        bottom: 38px;
         color: var(--leaf-dark);
-        left: 34px;
-        max-width: calc(100% - 68px);
+        left: clamp(20px, 4vw, 56px);
+        max-width: min(360px, calc(46vw - 40px));
         padding: 18px 20px;
         position: absolute;
         z-index: 2;
@@ -558,8 +600,25 @@
           min-height: auto;
         }
 
+        .hero-copy {
+          margin-left: 0;
+          min-height: auto;
+          padding-top: 440px;
+          width: 100%;
+        }
+
+        .hero-copy::before {
+          display: none;
+        }
+
         .hero-media {
-          min-height: 520px;
+          bottom: auto;
+          height: 460px;
+          min-height: 0;
+        }
+
+        .hero-media::after {
+          background: linear-gradient(180deg, rgba(21, 41, 31, 0.04), rgba(21, 83, 31, 0.98));
         }
 
         .service-grid,
@@ -612,11 +671,11 @@
         }
 
         .hero-copy {
-          padding: 44px 20px;
+          padding: 330px 20px 44px;
         }
 
         .hero h1 {
-          font-size: 3rem;
+          font-size: 2.85rem;
         }
 
         .hero-facts,
@@ -628,6 +687,10 @@
         .hero-media,
         .image-panel {
           min-height: 390px;
+        }
+
+        .hero-media {
+          height: 360px;
         }
 
         .media-note {
@@ -664,11 +727,11 @@
       <section class="hero" id="top">
         <div class="hero-copy">
           <p class="eyebrow">Geetbets en omliggende gemeenten</p>
-          <h1>Zelfstandige tuinman voor onderhoud en kleine tuinwerken.</h1>
+          <h1>Tuinonderhoud in Geetbets, proper gedaan.</h1>
           <p class="hero-text">
-            De Rosse Tuinkabouter helpt particuliere tuinen opnieuw strak,
-            gezond en verzorgd te krijgen. Ideaal voor hagen, snoeiwerk,
-            borders, opkuis en terugkerend tuinonderhoud.
+            Van hagen en snoeiwerk tot borders, schors en seizoensopkuis:
+            De Rosse Tuinkabouter brengt kleine en middelgrote tuinen weer
+            netjes in vorm.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="tel:+32470246463">Bel voor een afspraak</a>

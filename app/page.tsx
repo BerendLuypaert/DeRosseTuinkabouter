@@ -81,11 +81,11 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="eyebrow">Geetbets en omliggende gemeenten</p>
-          <h1>Zelfstandige tuinman voor onderhoud en kleine tuinwerken.</h1>
+          <h1>Tuinonderhoud in Geetbets, proper gedaan.</h1>
           <p className="hero-text">
-            De Rosse Tuinkabouter helpt particuliere tuinen opnieuw strak,
-            gezond en verzorgd te krijgen. Ideaal voor hagen, snoeiwerk,
-            borders, opkuis en terugkerend tuinonderhoud.
+            Van hagen en snoeiwerk tot borders, schors en seizoensopkuis:
+            De Rosse Tuinkabouter brengt kleine en middelgrote tuinen weer
+            netjes in vorm.
           </p>
           <div className="hero-actions">
             <a className="button primary" href="tel:+32470246463">
