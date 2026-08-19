@@ -124,11 +124,18 @@ export default function Home() {
           <p className="section-kicker">Praktisch, lokaal, verzorgd</p>
           <h2>Voor wie een nette tuin wil zonder groot tuinproject.</h2>
         </div>
-        <p>
-          Als zelfstandige tuinman in bijberoep ligt de nadruk op duidelijke
-          afspraken en haalbare werken: onderhoudsbeurten, hagen, borders,
-          kleine aanpassingen en seizoensopkuis.
-        </p>
+        <div className="intro-copy">
+          <p>
+            Als zelfstandige tuinman in bijberoep ligt de nadruk op duidelijke
+            afspraken en haalbare werken: onderhoudsbeurten, hagen, borders,
+            kleine aanpassingen en seizoensopkuis.
+          </p>
+          <ul aria-label="Kernpunten">
+            <li>Heldere afspraken</li>
+            <li>Netjes afgewerkt</li>
+            <li>Lokale service</li>
+          </ul>
+        </div>
       </section>
 
       <section className="section" id="diensten">
