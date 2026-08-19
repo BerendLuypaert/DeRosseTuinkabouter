@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --leaf: #244532;
-  --leaf-dark: #15291f;
+  --leaf: #235f37;
+  --leaf-dark: #123a25;
   --moss: #6f8a45;
   --sage: #dfe8d4;
   --bark: #8a4f31;
@@ -166,7 +166,7 @@ nav a:hover::after {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(430px, 1.12fr);
+  grid-template-columns: minmax(0, 0.96fr) minmax(430px, 1.04fr);
   isolation: isolate;
   min-height: calc(100vh - 78px);
   overflow: hidden;
@@ -176,7 +176,7 @@ nav a:hover::after {
 .hero-copy {
   align-content: center;
   background:
-    linear-gradient(rgba(21, 83, 31, 0.9), rgba(21, 83, 31, 0.9)),
+    linear-gradient(rgba(20, 88, 39, 0.94), rgba(18, 74, 34, 0.94)),
     url("/leaf-pattern.png");
   background-position: center;
   background-size: cover;
@@ -184,7 +184,7 @@ nav a:hover::after {
   color: var(--paper);
   display: grid;
   min-height: calc(100vh - 78px);
-  padding: clamp(54px, 7vw, 104px) clamp(38px, 6vw, 92px) clamp(54px, 7vw, 104px) clamp(28px, 6vw, 86px);
+  padding: clamp(54px, 7vw, 104px) clamp(34px, 5vw, 76px) clamp(54px, 7vw, 104px) clamp(28px, 6vw, 86px);
   position: relative;
   width: 100%;
   z-index: 2;
@@ -231,10 +231,11 @@ nav a:hover::after {
 
 .hero h1 {
   font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
-  font-size: clamp(3rem, 6.1vw, 6.2rem);
+  font-size: clamp(2.75rem, 4.9vw, 5.15rem);
   font-weight: 900;
-  line-height: 0.94;
-  max-width: 680px;
+  line-height: 1;
+  max-width: 620px;
+  text-wrap: balance;
 }
 
 .hero-text {
@@ -242,7 +243,7 @@ nav a:hover::after {
   font-size: clamp(1.05rem, 1.5vw, 1.28rem);
   line-height: 1.65;
   margin: 28px 0 0;
-  max-width: 650px;
+  max-width: 590px;
 }
 
 .hero-actions,
@@ -303,6 +304,10 @@ nav a:hover::after {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 44px 0 0;
   padding-top: 24px;
+}
+
+.hero-facts dd {
+  overflow-wrap: anywhere;
 }
 
 .hero-facts dt {
