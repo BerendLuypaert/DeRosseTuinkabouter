@@ -165,8 +165,6 @@ nav a:hover::after {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(430px, 1.08fr);
   isolation: isolate;
   min-height: calc(100vh - 78px);
   overflow: hidden;
@@ -184,19 +182,19 @@ nav a:hover::after {
   color: var(--paper);
   display: grid;
   min-height: calc(100vh - 78px);
-  padding: clamp(54px, 7vw, 104px) clamp(28px, 6vw, 86px);
+  padding: clamp(54px, 7vw, 104px) clamp(150px, 14vw, 230px) clamp(54px, 7vw, 104px) clamp(28px, 6vw, 86px);
   position: relative;
-  width: 100%;
+  width: min(68vw, 980px);
   z-index: 2;
 }
 
 .hero-copy::before {
-  background: linear-gradient(90deg, rgba(21, 83, 31, 0.9), rgba(21, 83, 31, 0.42) 38%, transparent);
+  background: linear-gradient(90deg, rgba(21, 83, 31, 0.92), rgba(21, 83, 31, 0.62) 34%, rgba(21, 83, 31, 0.18) 72%, transparent);
   content: "";
-  inset: 0 -110px 0 auto;
+  inset: 0 -280px 0 auto;
   pointer-events: none;
   position: absolute;
-  width: 130px;
+  width: 320px;
   z-index: -1;
 }
 
@@ -327,16 +325,16 @@ nav a:hover::after {
 .hero-media {
   animation: heroPhotoReveal 1100ms cubic-bezier(0.2, 0.8, 0.2, 1) 180ms both;
   clip-path: inset(0 0 0 100%);
-  grid-column: 2;
-  grid-row: 1;
+  inset: 0 0 0 auto;
   min-height: calc(100vh - 78px);
-  position: relative;
+  position: absolute;
   transform: translateX(-18%);
+  width: 58vw;
   z-index: 1;
 }
 
 .hero-media::after {
-  background: linear-gradient(90deg, rgba(21, 83, 31, 0.24), transparent 20%);
+  background: transparent;
   content: "";
   inset: 0;
   position: absolute;
@@ -620,6 +618,7 @@ footer {
 
   .hero-copy {
     min-height: auto;
+    padding-right: clamp(28px, 6vw, 86px);
     padding-top: 64px;
     width: 100%;
   }
@@ -630,11 +629,11 @@ footer {
 
   .hero-media {
     animation-duration: 850ms;
-    grid-column: 1;
-    grid-row: 1;
     height: 460px;
     min-height: 0;
+    position: relative;
     transform: none;
+    width: 100%;
   }
 
   .hero-media::after {
