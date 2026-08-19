@@ -50,9 +50,9 @@
 
       .site-header {
         align-items: center;
-        background: rgba(223, 232, 212, 0.78);
+        background: rgba(255, 255, 255, 0.92);
         backdrop-filter: blur(18px) saturate(1.15);
-        border-bottom: 1px solid rgba(36, 69, 50, 0.18);
+        border-bottom: 1px solid rgba(36, 69, 50, 0.12);
         box-shadow: 0 18px 42px rgba(21, 41, 31, 0.16);
         display: flex;
         gap: 24px;
@@ -77,15 +77,14 @@
         border-radius: 0;
         box-shadow: none;
         height: 62px;
-        filter: contrast(1.32) saturate(1.22);
-        mix-blend-mode: multiply;
+        filter: contrast(1.08) saturate(1.08);
         object-fit: contain;
         padding: 0;
         width: 220px;
       }
 
       .brand-service {
-        color: rgba(21, 41, 31, 0.72);
+        color: rgba(21, 41, 31, 0.68);
         font-size: 0.76rem;
         font-weight: 800;
         line-height: 1.1;
@@ -207,15 +206,16 @@
       }
 
       .hero-copy::after {
-        border: 1px solid rgba(223, 232, 212, 0.12);
-        border-radius: 999px;
+        background-image: url("public/leaf-pattern.png");
+        background-position: center;
+        background-size: cover;
         content: "";
-        height: 210px;
+        inset: 0;
+        opacity: 0.2;
+        pointer-events: none;
         position: absolute;
-        left: clamp(18px, 4vw, 52px);
-        top: clamp(28px, 7vw, 92px);
-        transform: rotate(-18deg);
-        width: 210px;
+        transform: scale(1.18) rotate(2deg);
+        z-index: -1;
       }
 
       .eyebrow,
@@ -333,7 +333,7 @@
         min-height: calc(100vh - 78px);
         position: relative;
         transform: translateX(-18%);
-        z-index: 1;
+        z-index: 3;
       }
 
       .hero-media::after {
@@ -351,13 +351,16 @@
       .media-note {
         background: rgba(247, 245, 239, 0.92);
         border-radius: 8px;
-        bottom: 38px;
+        bottom: auto;
+        box-shadow: 0 18px 38px rgba(21, 41, 31, 0.22);
         color: var(--leaf-dark);
-        left: clamp(20px, 4vw, 56px);
+        left: auto;
         max-width: min(360px, calc(100% - 80px));
         padding: 18px 20px;
         position: absolute;
-        z-index: 2;
+        right: clamp(20px, 4vw, 56px);
+        top: clamp(24px, 5vw, 62px);
+        z-index: 5;
       }
 
       @keyframes heroPhotoReveal {
@@ -712,9 +715,10 @@
         }
 
         .media-note {
-          bottom: 18px;
-          left: 18px;
+          left: auto;
           max-width: calc(100% - 36px);
+          right: 18px;
+          top: 18px;
         }
 
         footer {
