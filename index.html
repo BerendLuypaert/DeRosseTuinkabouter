@@ -663,6 +663,11 @@
 
       .split-section {
         align-items: stretch;
+        background:
+          linear-gradient(rgba(247, 245, 239, 0.92), rgba(247, 245, 239, 0.92)),
+          url("public/leaf-pattern.png");
+        background-position: center;
+        background-size: cover;
         display: grid;
         gap: 24px;
         grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
@@ -675,12 +680,55 @@
       }
 
       .image-panel {
+        animation: panelLiftIn 760ms ease both;
+        box-shadow: 0 22px 54px rgba(8, 24, 15, 0.18);
         min-height: 520px;
+        position: relative;
+      }
+
+      .image-panel span {
+        background: rgba(247, 245, 239, 0.94);
+        border-radius: 999px;
+        bottom: 18px;
+        color: var(--leaf-dark);
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 900;
+        left: 18px;
+        max-width: calc(100% - 36px);
+        padding: 12px 16px;
+        position: absolute;
       }
 
       .steps-panel {
-        background: var(--white);
+        animation: panelLiftIn 760ms 110ms ease both;
+        background: rgba(255, 255, 255, 0.88);
+        box-shadow: 0 18px 42px rgba(8, 24, 15, 0.1);
         padding: clamp(32px, 5vw, 60px);
+        position: relative;
+      }
+
+      .steps-panel::before {
+        background: var(--rust);
+        content: "";
+        height: 76px;
+        left: 0;
+        position: absolute;
+        top: 42px;
+        width: 5px;
+      }
+
+      .steps-panel h2,
+      .contact-section h2,
+      .contact-card strong,
+      .contact-card span {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .steps-panel h2,
+      .contact-section h2 {
+        font-weight: 900;
+        line-height: 1.08;
+        text-wrap: balance;
       }
 
       .steps-panel ol {
@@ -697,14 +745,16 @@
         display: grid;
         gap: 14px;
         grid-template-columns: 42px 1fr;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 800;
         line-height: 1.6;
       }
 
       .steps-panel li::before {
         align-items: center;
-        background: var(--sage);
+        background: var(--leaf-dark);
         border-radius: 50%;
-        color: var(--leaf);
+        color: var(--paper);
         content: counter(step);
         counter-increment: step;
         display: grid;
@@ -716,27 +766,41 @@
 
       .steps-panel p {
         color: rgba(29, 38, 31, 0.72);
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
         line-height: 1.72;
       }
 
       .contact-section {
         align-items: center;
-        background: var(--sage);
+        background:
+          linear-gradient(rgba(222, 230, 204, 0.94), rgba(222, 230, 204, 0.94)),
+          url("public/leaf-pattern.png");
+        background-position: center;
+        background-size: cover;
         display: grid;
         gap: 28px;
         grid-template-columns: minmax(0, 1fr) minmax(320px, 0.55fr);
       }
 
+      .contact-copy {
+        animation: panelLiftIn 760ms ease both;
+      }
+
       .contact-copy p:not(.section-kicker) {
         color: rgba(29, 38, 31, 0.74);
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 1.08rem;
+        font-weight: 700;
         line-height: 1.72;
         max-width: 630px;
       }
 
       .contact-card {
+        animation: panelLiftIn 760ms 120ms ease both;
         background: var(--leaf-dark);
         border-radius: 8px;
+        box-shadow: 0 18px 42px rgba(8, 24, 15, 0.2);
         color: var(--paper);
         display: grid;
         font-style: normal;
@@ -745,14 +809,27 @@
       }
 
       .contact-card strong {
-        font-family: Georgia, "Times New Roman", serif;
         font-size: 1.7rem;
+        font-weight: 900;
         margin-bottom: 8px;
       }
 
       .contact-card span {
         color: rgba(247, 245, 239, 0.8);
+        font-weight: 800;
         line-height: 1.45;
+      }
+
+      @keyframes panelLiftIn {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       footer {
@@ -1029,6 +1106,7 @@
       <section class="split-section">
         <div class="image-panel">
           <img src="public/photos/werk-01.jpeg" alt="Hoge haag en tuin tijdens onderhoudswerk" />
+          <span>Hoge haag en tuin tijdens onderhoudswerk</span>
         </div>
         <div class="steps-panel">
           <p class="section-kicker">Werkwijze</p>

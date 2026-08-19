@@ -176,6 +176,7 @@ export default function Home() {
       <section className="split-section">
         <div className="image-panel">
           <img src="/photos/werk-01.jpeg" alt="Hoge haag en tuin tijdens onderhoudswerk" />
+          <span>Hoge haag en tuin tijdens onderhoudswerk</span>
         </div>
         <div className="steps-panel">
           <p className="section-kicker">Werkwijze</p>
