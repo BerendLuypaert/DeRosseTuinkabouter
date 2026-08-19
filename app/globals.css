@@ -476,6 +476,13 @@ nav a:hover::after {
   max-width: 840px;
 }
 
+.section .section-heading h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
 .section-heading.light {
   color: var(--paper);
 }
@@ -494,11 +501,52 @@ nav a:hover::after {
 }
 
 .service-card {
+  animation: serviceCardIn 700ms ease both;
   background: var(--white);
   border: 1px solid rgba(36, 69, 50, 0.12);
   border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(21, 41, 31, 0.06);
   min-height: 280px;
+  overflow: hidden;
   padding: 26px;
+  position: relative;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.service-card:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.service-card:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.service-card:nth-child(4) {
+  animation-delay: 240ms;
+}
+
+.service-card::before {
+  background: var(--leaf);
+  content: "";
+  height: 5px;
+  inset: 0 0 auto;
+  position: absolute;
+  transform: scaleX(0.28);
+  transform-origin: left;
+  transition: transform 240ms ease;
+}
+
+.service-card:hover {
+  border-color: rgba(35, 95, 55, 0.3);
+  box-shadow: 0 22px 44px rgba(21, 41, 31, 0.14);
+  transform: translateY(-8px);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
 }
 
 .service-card span {
@@ -509,7 +557,9 @@ nav a:hover::after {
 }
 
 .service-card h3 {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.25rem;
+  font-weight: 900;
   margin: 0 0 14px;
 }
 
@@ -517,6 +567,18 @@ nav a:hover::after {
   color: rgba(29, 38, 31, 0.7);
   line-height: 1.65;
   margin: 0;
+}
+
+@keyframes serviceCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .work-section {
