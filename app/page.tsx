@@ -61,13 +61,12 @@ export default function Home() {
     <main>
       <header className="site-header" aria-label="Hoofdnavigatie">
         <a className="brand" href="#top" aria-label="De Rosse Tuinkabouter">
-          <span className="brand-mark" aria-hidden="true">
-            <span className="brand-sprout" />
-          </span>
-          <span>
-            <strong>De Rosse Tuinkabouter</strong>
-            <small>Tuinman in bijberoep</small>
-          </span>
+          <img
+            className="brand-logo"
+            src="/logo-rosse-tuinkabouter.png"
+            alt="De Rosse Tuinkabouter"
+          />
+          <span className="brand-service">Tuinman in bijberoep</span>
         </a>
         <nav>
           <a href="#diensten">Diensten</a>
