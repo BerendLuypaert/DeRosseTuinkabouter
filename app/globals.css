@@ -169,6 +169,8 @@ nav a:hover::after {
 }
 
 .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(430px, 1.08fr);
   isolation: isolate;
   min-height: calc(100vh - 78px);
   overflow: hidden;
@@ -182,24 +184,23 @@ nav a:hover::after {
     url("/leaf-pattern.png");
   background-position: center;
   background-size: cover;
-  box-shadow: -30px 0 90px rgba(21, 41, 31, 0.28);
+  box-shadow: 30px 0 90px rgba(21, 41, 31, 0.28);
   color: var(--paper);
   display: grid;
-  margin-left: auto;
   min-height: calc(100vh - 78px);
   padding: clamp(54px, 7vw, 104px) clamp(28px, 6vw, 86px);
   position: relative;
-  width: min(58vw, 820px);
+  width: 100%;
   z-index: 2;
 }
 
 .hero-copy::before {
-  background: linear-gradient(90deg, transparent, rgba(21, 83, 31, 0.96) 72%);
+  background: linear-gradient(90deg, rgba(21, 83, 31, 0.98), rgba(21, 83, 31, 0.9) 44%, transparent);
   content: "";
-  inset: 0 auto 0 -170px;
+  inset: 0 -190px 0 auto;
   pointer-events: none;
   position: absolute;
-  width: 180px;
+  width: 220px;
   z-index: -1;
 }
 
@@ -209,7 +210,7 @@ nav a:hover::after {
   content: "";
   height: 210px;
   position: absolute;
-  right: clamp(18px, 4vw, 52px);
+  left: clamp(18px, 4vw, 52px);
   top: clamp(28px, 7vw, 92px);
   transform: rotate(-18deg);
   width: 210px;
@@ -242,7 +243,7 @@ nav a:hover::after {
   font-size: clamp(3rem, 6.1vw, 6.2rem);
   font-weight: 900;
   line-height: 0.94;
-  max-width: 720px;
+  max-width: 680px;
 }
 
 .hero-text {
@@ -327,23 +328,26 @@ nav a:hover::after {
 }
 
 .hero-media {
-  inset: 0;
-  min-height: 100%;
-  position: absolute;
+  animation: heroPhotoReveal 1100ms cubic-bezier(0.2, 0.8, 0.2, 1) 180ms both;
+  clip-path: inset(0 0 0 100%);
+  grid-column: 2;
+  grid-row: 1;
+  min-height: calc(100vh - 78px);
+  position: relative;
+  transform: translateX(-18%);
   z-index: 1;
 }
 
 .hero-media::after {
-  background:
-    linear-gradient(90deg, rgba(21, 41, 31, 0.08), rgba(21, 83, 31, 0.3) 48%, rgba(21, 83, 31, 0.8)),
-    linear-gradient(180deg, rgba(21, 41, 31, 0.04), rgba(21, 41, 31, 0.45));
+  background: linear-gradient(90deg, rgba(21, 83, 31, 0.46), transparent 28%);
   content: "";
   inset: 0;
   position: absolute;
 }
 
 .hero-media img {
-  object-position: 32% center;
+  filter: saturate(1.06) contrast(1.04);
+  object-position: 43% center;
 }
 
 .media-note {
@@ -352,10 +356,22 @@ nav a:hover::after {
   bottom: 38px;
   color: var(--leaf-dark);
   left: clamp(20px, 4vw, 56px);
-  max-width: min(360px, calc(46vw - 40px));
+  max-width: min(360px, calc(100% - 80px));
   padding: 18px 20px;
   position: absolute;
   z-index: 2;
+}
+
+@keyframes heroPhotoReveal {
+  from {
+    clip-path: inset(0 0 0 100%);
+    transform: translateX(-18%);
+  }
+
+  to {
+    clip-path: inset(0);
+    transform: translateX(0);
+  }
 }
 
 .media-note span,
@@ -603,9 +619,8 @@ footer {
   }
 
   .hero-copy {
-    margin-left: 0;
     min-height: auto;
-    padding-top: 440px;
+    padding-top: 64px;
     width: 100%;
   }
 
@@ -614,9 +629,12 @@ footer {
   }
 
   .hero-media {
-    bottom: auto;
+    animation-duration: 850ms;
+    grid-column: 1;
+    grid-row: 1;
     height: 460px;
     min-height: 0;
+    transform: none;
   }
 
   .hero-media::after {
@@ -673,7 +691,7 @@ footer {
   }
 
   .hero-copy {
-    padding: 330px 20px 44px;
+    padding: 54px 20px 44px;
   }
 
   .hero h1 {
